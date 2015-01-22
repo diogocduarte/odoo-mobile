@@ -47,7 +47,6 @@ class SampleController(http.Controller):
         # TODO:this must be replaced by mobile login 
         if not session.uid:
             return login_redirect()
-
         return http.request.render('mobile_sample.searchform', {
             'root': MODULE_BASE_PATH,
             'contacts': False
