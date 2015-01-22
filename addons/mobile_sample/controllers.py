@@ -18,16 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import time
-from datetime import datetime, timedelta
-from calendar import weekday
 from openerp import http
 from openerp.http import request
 import werkzeug.utils
-import pytz
-from openerp.tools.translate import _
-from openerp.addons.web.controllers.main import module_boot, login_redirect
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from openerp.addons.web.controllers.main import login_redirect
 
 MODULE_BASE_PATH = '/mobile/sample/'
 
