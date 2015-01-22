@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+    
+<template id="assets_frontend" name="Mobile assets">
+
+    <!-- jQuery stuff -->
+    <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="/web/static/lib/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="/web/static/lib/jquery.placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="/web/static/lib/jquery.timeago/jquery.timeago.js"></script>
+    <script type="text/javascript" src="/web/static/lib/jquery.form/jquery.form.js"></script>
+	<script src="/mobile/static/lib/ratchet/js/ratchet.js"></script>
+    <script type="text/javascript" src="/web/static/lib/bootstrap/js/bootstrap.js"></script>
+    
+	<link href="/mobile/static/lib/ratchet/css/ratchet.css" rel="stylesheet"/>
+	
+</template>
+
+<!-- Layout and generic templates -->
+
+<template id="layout" name="Main layout">&lt;!DOCTYPE html&gt;
+    <html t-att-lang="lang and lang.replace('_', '-')"
+          t-att-data-translatable="'1' if translatable else None">
+          
+	  <head>
+	    <meta charset="utf-8"/>
+	    <title><t t-esc="title"/></title>
+	
+	    <!-- Sets initial viewport load and disables zooming  -->
+	    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+		<link rel="icon" href="/mobile/static/img/favicon.ico"/>
+		
+	    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<link rel="apple-touch-icon-precomposed" href="/mobile/static/img/favicon.ico"/>
+		
+		<t t-call-assets="mobile.assets_frontend"/>
+
+	  </head>
+	  <body>
+	  	<t t-raw="0"/>
+	  </body>
+	</html>
+</template>
+
+    </data>
+</openerp>
