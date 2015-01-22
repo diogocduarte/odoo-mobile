@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+<!-- Loading Module Assets -->
+<template id="assets_frontend" inherit_id="mobile.assets_frontend" name="mobile_timesheet assets">
+	<xpath expr="." position="inside">
+		<script type="text/javascript" src="/mobile_timesheet/static/src/js/mobile_timesheet.js"/>
+	</xpath>
+</template>
+
+<!-- Customer Search Form -->
+<template id="searchform" name="Partner List">
+	<t t-call="mobile.layout">
+		<t t-set="title">Customers List</t>
+		<div>
+	    <!-- Top Bar -->
+	    <header class="bar bar-nav">
+	  		<h1 class="title">Search Customers</h1>
+	    </header>
+		<!-- Content Zone -->
+    	<div class="content">
+    		<!-- Search Form -->
+			<form t-attf-action="#{ root }contacts/" method="post" >
+			  	<input type="search" placeholder="Customer name" name="searchtx"/>
+			  	<button class="btn btn-block btn-outlined" type="submit">
+			  	<span class="icon icon-search"></span>
+			  		Search</button>
+			</form>
+			<!-- List Contacts -->
+			<ul t-if="customers" class="table-view">
+				<li t-foreach="customers" t-as="cust" class="table-view-cell">
+					<a class="navigate-right" t-attf-href="#{ root }contacts/#{ cust.id }" data-transition="slide-in" >
+						<h3>
+							<span t-esc="cust.name"/>
+						</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</t>
+</template>
+
+<!-- Customer Information-->
+<template id="customer" name="Customer Information">
+	<t t-call="mobile.layout">
+		<t t-set="title">Customer</t>
+		<div>
+	    <!-- Top Bar -->
+	    <header class="bar bar-nav">
+	    	<a class="control-item icon icon-left-nav pull-left" t-attf-href="#{ root }contacts/"/>
+	  		<h1 class="title">Customer Info</h1>
+	    </header>
+		<!-- Content Zone -->
+    	<div class="content">
+			<!-- Customer Info -->
+			<div class="content-padded">
+				<h3><span t-esc="customer.name"/></h3>
+				<h6>Phone:</h6>
+				<p><span t-esc="customer.phone"/></p>
+				<h6>Mobile:</h6>
+				<p><span t-esc="customer.mobile"/></p>
+				<h6>Email:</h6>
+				<p><span t-esc="customer.email"/></p>
+			</div>
+		</div>
+		</div>
+	</t>
+</template>
+    </data>
+</openerp>

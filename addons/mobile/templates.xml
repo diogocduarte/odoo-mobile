@@ -2,10 +2,9 @@
 <!-- vim:fdn=3:
 -->
 <openerp>
-    <data>
-    
+    <data> 
+<!-- Frontend assets template -->
 <template id="assets_frontend" name="Mobile assets">
-
     <!-- jQuery stuff -->
     <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
     <script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
@@ -15,32 +14,24 @@
     <script type="text/javascript" src="/web/static/lib/jquery.form/jquery.form.js"></script>
 	<script src="/mobile/static/lib/ratchet/js/ratchet.js"></script>
     <script type="text/javascript" src="/web/static/lib/bootstrap/js/bootstrap.js"></script>
-    
 	<link href="/mobile/static/lib/ratchet/css/ratchet.css" rel="stylesheet"/>
-	
 </template>
 
 <!-- Layout and generic templates -->
-
 <template id="layout" name="Main layout">&lt;!DOCTYPE html&gt;
     <html t-att-lang="lang and lang.replace('_', '-')"
           t-att-data-translatable="'1' if translatable else None">
-          
 	  <head>
 	    <meta charset="utf-8"/>
 	    <title><t t-esc="title"/></title>
-	
 	    <!-- Sets initial viewport load and disables zooming  -->
 	    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
 		<link rel="icon" href="/mobile/static/img/favicon.ico"/>
-		
 	    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
 	    <meta name="apple-mobile-web-app-capable" content="yes"/>
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 		<link rel="apple-touch-icon-precomposed" href="/mobile/static/img/favicon.ico"/>
-		
 		<t t-call-assets="mobile.assets_frontend"/>
-
 	  </head>
 	  <body>
 	  	<t t-raw="0"/>
@@ -48,5 +39,23 @@
 	</html>
 </template>
 
+<!-- Base Error Messagebox -->
+<template id="error" name="Base Error Messagebox">
+	<t t-call="mobile.layout">
+		<t t-set="title">Error</t>
+	    <!-- Top Bar -->
+	    <header class="bar bar-nav">
+	    	<a class="icon icon-left-nav pull-left" t-attf-href="#{ returnpath }" data-transition="slide-out"/>
+	    	<h1 class="title" >Error</h1>
+	    </header>
+	    <!-- Content Zone -->
+    	<div class="content">
+			<div class="content-padded">
+			  <h3><span t-esc="errortitle"/></h3>
+			  <p><span t-esc="errormessage"/></p>
+			</div>
+		</div>
+	</t>
+</template>
     </data>
 </openerp>
