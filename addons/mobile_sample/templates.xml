@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-	
+<!-- Change Favicon Template -->
+<template id="layout" inherit_id="mobile.layout" name="App Favicon">
+	<xpath expr="//link[@rel='icon']" position="replace">
+		<link rel="icon" href="/mobile_sample/static/img/favicon.ico"/>
+	</xpath>
+	<xpath expr="//link[@rel='apple-touch-icon-precomposed']" position="replace">
+		<link rel="apple-touch-icon-precomposed" href="/mobile_sample/static/img/favicon.ico"/>
+	</xpath>
+</template>
 <!-- Loading Module Assets -->
-<template id="assets_frontend" inherit_id="mobile.assets_frontend" name="mobile_timesheet assets">
+<template id="assets_frontend" inherit_id="mobile.assets_frontend" name="mobile assets">
 	<xpath expr="." position="inside">
-		<script type="text/javascript" src="/mobile_timesheet/static/src/js/mobile_timesheet.js"/>
+		<script type="text/javascript" src="/mobile_sample/static/src/js/mobile_sample.js"/>
 	</xpath>
 </template>
 

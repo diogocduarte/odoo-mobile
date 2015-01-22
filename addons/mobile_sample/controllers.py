@@ -33,7 +33,7 @@ class SampleController(http.Controller):
         # this must be replaced by mobile login 
         if not session.uid:
             return login_redirect()
-        return werkzeug.utils.redirect(MODULE_BASE_PATH + '/contacts/')
+        return werkzeug.utils.redirect(MODULE_BASE_PATH + 'contacts/')
 
     @http.route(MODULE_BASE_PATH + 'contacts/', type='http', methods=['GET'], auth="user")
     def getsearchform(self, **kwargs):

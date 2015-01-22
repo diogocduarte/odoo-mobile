@@ -3,8 +3,9 @@
 -->
 <openerp>
     <data> 
+
 <!-- Frontend assets template -->
-<template id="assets_frontend" name="Mobile assets">
+<template id="mobile.assets_frontend" name="Mobile assets fronten">
     <!-- jQuery stuff -->
     <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
     <script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
@@ -26,11 +27,14 @@
 	    <title><t t-esc="title"/></title>
 	    <!-- Sets initial viewport load and disables zooming  -->
 	    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
-		<link rel="icon" href="/mobile/static/img/favicon.ico"/>
+
 	    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
 	    <meta name="apple-mobile-web-app-capable" content="yes"/>
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	    
+		<link rel="icon" href="/mobile/static/img/favicon.ico"/>
 		<link rel="apple-touch-icon-precomposed" href="/mobile/static/img/favicon.ico"/>
+		
 		<t t-call-assets="mobile.assets_frontend"/>
 	  </head>
 	  <body>
