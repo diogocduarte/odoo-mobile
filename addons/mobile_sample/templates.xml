@@ -25,6 +25,7 @@
 	    <!-- Top Bar -->
 	    <header class="bar bar-nav">
 	  		<h1 class="title">Search Customers</h1>
+	  		<a class="icon icon-close pull-left" t-attf-href="/mobile/logout/#{ db }/#{ root[1:] }"></a>
 	    </header>
 		<!-- Content Zone -->
     	<div class="content">
@@ -32,7 +33,7 @@
 			<form t-attf-action="#{ root }contacts/" method="post" >
 			  	<input type="search" placeholder="Customer name" name="searchtx"/>
 			  	<button class="btn btn-block btn-outlined" type="submit">
-			  	<span class="icon icon-search"></span>
+			  		<span class="icon icon-search"></span>
 			  		Search</button>
 			</form>
 			<!-- List Contacts -->

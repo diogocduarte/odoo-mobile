@@ -43,6 +43,36 @@
 	</html>
 </template>
 
+<!-- Mobile Login -->
+<template id="login" name="Mobile Login Form">
+	<t t-call="mobile.layout">
+		<t t-set="title">Login</t>
+	    <!-- Top Bar -->
+	    <header class="bar bar-nav">
+	    	<h1 class="title" >Login</h1>
+	    </header>
+	    <!-- Content Zone -->
+	    <div class="content">
+			<form class="oe_login_form" t-attf-action="/mobile/login/{{ d_db }}" method="post">
+			<div class="input-row">
+				<label>Username:</label>
+				<input type="text" name="login" placeholder="your@email.com" t-att-value="login" id="login" required="required" autofocus="autofocus"/>
+			</div>
+			<div class="input-row">
+				<label>Password:</label>
+				<input type="password" name="password" id="password" required="required"/>
+			</div>
+				<input type="hidden" name="redirecturl-f" t-att-value="redirect_url"/>
+				<input type="hidden" name="db1" t-att-value="d_db"/>
+				<button type="submit" class="btn btn-primary btn-block">Log in</button>
+			</form>
+			<div t-if="error" class="content-padded">
+				<span t-esc="error"/>
+			</div>
+		</div>
+	</t>
+</template>
+
 <!-- Base Error Messagebox -->
 <template id="error" name="Base Error Messagebox">
 	<t t-call="mobile.layout">

@@ -21,38 +21,36 @@
 from openerp import http
 from openerp.http import request
 import werkzeug.utils
-from openerp.addons.web.controllers.main import login_redirect
+from openerp.addons.mobile.controllers import login_redirect
 
 MODULE_BASE_PATH = '/mobile/sample/'
 
+    
 class SampleController(http.Controller):
-
-    @http.route(MODULE_BASE_PATH)
+    
+    @http.route(MODULE_BASE_PATH, type='http', auth="none")
     def main(self, **kwargs):
-        cr, uid, context, session = request.cr, request.uid, request.context, request.session
-        # this must be replaced by mobile login 
+        session = request.session
         if not session.uid:
-            return login_redirect()
+            return login_redirect(MODULE_BASE_PATH)
         return werkzeug.utils.redirect(MODULE_BASE_PATH + 'contacts/')
 
     @http.route(MODULE_BASE_PATH + 'contacts/', type='http', methods=['GET'], auth="user")
     def getsearchform(self, **kwargs):
-        cr, uid, context, session = request.cr, request.uid, request.context, request.session
-        # TODO:this must be replaced by mobile login 
+        session = request.session
         if not session.uid:
-            return login_redirect()
+            return login_redirect(MODULE_BASE_PATH)
         return http.request.render('mobile_sample.searchform', {
             'root': MODULE_BASE_PATH,
+            'db': session.db,
             'contacts': False
         })
         
     @http.route(MODULE_BASE_PATH + 'contacts/', type='http', methods=['POST'], auth="user")
     def postsearchresult(self, **kwargs):
-        cr, uid, context, session = request.cr, request.uid, request.context, request.session
-        # TODO:this must be replaced by mobile login 
+        cr, uid, session = request.cr, request.uid, request.session
         if not session.uid:
-            return login_redirect()
-        cr, uid = request.cr, request.uid
+            return login_redirect(MODULE_BASE_PATH)
         partners = request.registry.get("res.partner")
         ids = partners.search(cr, uid, [('customer', '=', True),('name', 'ilike', kwargs['searchtx'])])
         obj = []
@@ -60,20 +58,20 @@ class SampleController(http.Controller):
             obj.append(rec)
         return http.request.render('mobile_sample.searchform', {
             'root': MODULE_BASE_PATH,
+            'db': session.db,
             'customers': obj
         })
 
     @http.route(MODULE_BASE_PATH + 'contacts/<int:id>', type='http', auth="user")
     def getcustomer(self, id, **kwargs):
-        cr, uid, context, session = request.cr, request.uid, request.context, request.session
-        # TODO:this must be replaced by mobile login 
+        cr, uid, session = request.cr, request.uid, request.session
         if not session.uid:
-            return login_redirect()
-        cr, uid = request.cr, request.uid
+            return login_redirect(MODULE_BASE_PATH)
         partners = request.registry.get("res.partner")
         ids = partners.search(cr, uid, [('id', '=', id)])
         obj = partners.browse(cr, uid, ids)
         return http.request.render('mobile_sample.customer', {
             'root': MODULE_BASE_PATH,
+            'db': session.db,
             'customer': obj[0]
         })
