@@ -64,7 +64,7 @@ class BaseLoginController(http.Controller):
     
     @http.route('/mobile/login/<string:db>/<path:redirecturl>', type='http', methods=['GET'], auth="none")
     def getlogin(self, db, redirecturl, **kwargs):
-        """Coming from database selector will show 
+        """Coming from database selector will show
             authentication form.
 
            :param db string: database name

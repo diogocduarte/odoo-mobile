@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mobile_sample
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-02 10:26+0000\n"
+"PO-Revision-Date: 2015-02-02 10:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mobile_sample
+#: view:website:mobile_sample.customer
+msgid "Customer"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.customer
+msgid "Customer Info"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.searchform
+msgid "Customer name"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.searchform
+msgid "Customers List"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.customer
+msgid "Email:"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.customer
+msgid "Mobile:"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.customer
+msgid "Phone:"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.searchform
+msgid "Search"
+msgstr ""
+
+#. module: mobile_sample
+#: view:website:mobile_sample.searchform
+msgid "Search Customers"
+msgstr ""
+

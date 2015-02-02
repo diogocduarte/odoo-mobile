@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mobile
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-02 10:26+0000\n"
+"PO-Revision-Date: 2015-02-02 10:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: view:website:mobile.error
+#. module: mobile
+msgid "Error"
+msgstr "Error"
+
+#: view:website:mobile.login
+#. module: mobile
+msgid "Log in"
+msgstr "Log in"
+
+#: view:website:mobile.login
+#. module: mobile
+msgid "Login"
+msgstr "Login"
+
+#: view:website:mobile.login
+#. module: mobile
+msgid "Password:"
+msgstr "Password"
+
+#: view:website:mobile.login
+#. module: mobile
+msgid "Username:"
+msgstr "Username"
+
+#: view:website:mobile.login
+#. module: mobile
+msgid "your@email.com"
+msgstr "your@email.com"
+
