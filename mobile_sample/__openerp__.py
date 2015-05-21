@@ -16,4 +16,5 @@
         # 'security/ir.model.access.csv',
         'templates.xml',
     ],
+    'application': True,
 }
