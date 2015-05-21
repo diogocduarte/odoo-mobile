@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mobile Website Builder",
+    'name': "Mobile Website Framework",
 
     'summary': """
         Implements mobile website for your phone""",
